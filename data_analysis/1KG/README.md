@@ -6,7 +6,7 @@ We encourage interested users to repurpose our scripts for their own analyses. I
 
 **What is Provided**
 
-| File Name      | Function |s
+| File Name      | Function |
 | ----------- | ----------- |
 | `1kg_exchange_test_python.bash`     | Automates execution of test of exchangeability for all 26 populations of 1KG       |
 | `test_exchangeability.py`   | Executes test of exchangeability from terminal, given three arguments: directory to 1KG population files (BED/BIM/FAM), directory to PLINK2, resampling number for permutation test      |
