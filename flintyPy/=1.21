@@ -1,0 +1,28 @@
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... done
+
+## Package Plan ##
+
+  environment location: /Users/alanaw/anaconda3/envs/flinty
+
+  added / updated specs:
+    - numpy
+
+
+The following NEW packages will be INSTALLED:
+
+  libblas            conda-forge/osx-64::libblas-3.9.0-10_openblas
+  libcblas           conda-forge/osx-64::libcblas-3.9.0-10_openblas
+  libgfortran        conda-forge/osx-64::libgfortran-5.0.0-9_3_0_h6c81a4c_23
+  libgfortran5       conda-forge/osx-64::libgfortran5-9.3.0-h6c81a4c_23
+  liblapack          conda-forge/osx-64::liblapack-3.9.0-10_openblas
+  libopenblas        conda-forge/osx-64::libopenblas-0.3.17-openmp_h3351f45_1
+  llvm-openmp        conda-forge/osx-64::llvm-openmp-12.0.1-hda6cdc1_1
+  numpy              conda-forge/osx-64::numpy-1.21.1-py37h84c02c4_0
+
+
+Proceed ([y]/n)? 
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+

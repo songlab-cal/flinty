@@ -1,0 +1,7 @@
+flintypy
+========
+
+.. toctree::
+   :maxdepth: 4
+
+   flintypy
