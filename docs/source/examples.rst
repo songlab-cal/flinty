@@ -136,7 +136,7 @@ To overcome these challenges, we devise a strategy around how we want to run our
     - remove the loaded autosome object from memory (*addresses challenge 1*)
 3. Run test of exchangeability on list of distance matrices
 
-We provide `here <https://github.com/alanaw1/exchangeability_test/blob/main/data-analysis/1KG/test_exchangeability.py>`_ a Python script, and `here <https://github.com/alanaw1/exchangeability_test/blob/main/data-analysis/1KG/1kg_exchange_test_python.bash>`_ a "master" bash script, for performing the steps above. Our `README <https://github.com/alanaw1/exchangeability_test/blob/main/data-analysis/1KG/README.md>`_ markdown on Github provides guidance on reproducing our results, which we report below. 
+We provide `here <https://github.com/songlab-cal/flinty/data-analysis/1KG/test_exchangeability.py>`_ a Python script, and `here <https://github.com/songlab-cal/flinty/data-analysis/1KG/1kg_exchange_test_python.bash>`_ a "master" bash script, for performing the steps above. Our `README <https://github.com/songlab-cal/flinty/data-analysis/1KG/README.md>`_ markdown on Github provides guidance on reproducing our results, which we report below. 
 
 
 +--------------------------------------------------+-----------------+
