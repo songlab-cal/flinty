@@ -40,16 +40,16 @@ A slightly more complicated example is when features are partitioned into indepe
     # Simulate blocks of AR process features
     N_BLOCKS = 20
     big_array = np.array([np.array([AR_object.generate_sample(nsample=100) for i in range(10)]) for b in range(N_BLOCKS)])
-    X = np.concatenate(big_array, axis = 1)
+    X = np.concatenate(big_array, axis=1)
     blocks = [np.arange(b * 100, b * 100 + 100) for b in range(N_BLOCKS)]
 
     # Run test without accounting for block dependency
     # Use large P asymptotics since P = 20 * 100 is large
-    flintypy.v_stat.get_p_value(X, large_p = True)
+    flintypy.v_stat.get_p_value(X, large_p=True)
 
     # Run test accounting for block dependency
     # Use permutation test since B = 20 is small
-    flintypy.v_stat.get_p_value(X, blocks = blocks)
+    flintypy.v_stat.get_p_value(X, blocks=blocks)
 
 
 A List of Independent Distances
@@ -84,7 +84,7 @@ For illustration purposes, we generate the same dataset :math:`\mathbf{X}` using
     matrix_list = [np.array([AR_object.generate_sample(nsample=100) for i in range(10)]) for b in range(N_BLOCKS)]
 
     # Convert to list of pairwise distances
-    dist_list = list(map(lambda x: pdist(x, metric = 'euclidean'), matrix_list)) # in vector form
+    dist_list = list(map(lambda x: pdist(x, metric='euclidean'), matrix_list)) # in vector form
     dist_mat_list = list(map(lambda x: squareform(x), dist_list)) # in square matrix form 
 
     # Run test on pairwise distance data
