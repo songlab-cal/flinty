@@ -114,28 +114,33 @@
 <p>Looking for documentation of our functions? You are at the right place.</p>
 <div class="section" id="module-flintypy.v_stat">
 <span id="flintypy-v-stat-module"></span><h2>flintypy.v_stat module<a class="headerlink" href="#module-flintypy.v_stat" title="Permalink to this headline">¶</a></h2>
+<p>v_stat module: Methods to develop a test of exchangeability</p>
+<p>&#64;author: Alan Aw and Jeffrey Spence</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="flintypy.v_stat._block_cov">
 <span class="sig-prename descclassname"><span class="pre">flintypy.v_stat.</span></span><span class="sig-name descname"><span class="pre">_block_cov</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blocks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flintypy.v_stat._block_cov" title="Permalink to this definition">¶</a></dt>
-<dd><p>Covariance Computations between Pairs of Distances (Block Dependencies Case)</p>
+<dd><p>Covariance Computations between Pairs of Distances (Block Dependency Case)</p>
 <p>Computes covariance matrix entries and associated
-<span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(\beta\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span> quantities, for partitionable
-features that are grouped into blocks. Computes the unique entries of the asymptotic covariance matrix
-of the pairwise distances in <span class="math notranslate nohighlight">\(O(N^2)\)</span> time.</p>
+<span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(\beta\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span>
+quantities, for partitionable
+features that are grouped into blocks. Computes the unique entries of the
+asymptotic covariance matrix of the pairwise
+distances in <span class="math notranslate nohighlight">\(O(N^2)\)</span> time.</p>
 <p>This is used in the large <span class="math notranslate nohighlight">\(B\)</span> asymptotics of the permutation test.</p>
 <p>Depends on: <code class="docutils literal notranslate"><span class="pre">_hamming_distances</span></code>, <code class="docutils literal notranslate"><span class="pre">scipy.spatial.distance.pdist</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>X</strong> (<em>float numpy array</em>) – An <span class="math notranslate nohighlight">\(N \times P\)</span> array recording <span class="math notranslate nohighlight">\(P\)</span> features in <span class="math notranslate nohighlight">\(N\)</span> individuals</p></li>
-<li><p><strong>blocks</strong> (<em>List of int64 numpy arrays</em>) – List of arrays, with the <span class="math notranslate nohighlight">\(k\)</span> th array containing the indices of features
-in block <span class="math notranslate nohighlight">\(k\)</span>.</p></li>
+<li><p><strong>X</strong> (<em>float numpy array</em>) – An <span class="math notranslate nohighlight">\(N \times P\)</span> array recording <span class="math notranslate nohighlight">\(P\)</span> features in
+<span class="math notranslate nohighlight">\(N\)</span> individuals</p></li>
+<li><p><strong>blocks</strong> (<em>List of int64 numpy arrays</em>) – List of arrays, with the <span class="math notranslate nohighlight">\(k\)</span> th array containing the indices of
+features in block <span class="math notranslate nohighlight">\(k\)</span>.</p></li>
 <li><p><strong>p</strong> (<em>float</em>) – The Minkowski power, <span class="math notranslate nohighlight">\(l_p^p = (x_1^p+\ldots+x_n^p)\)</span></p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The three distinct entries of covariance matrix <span class="math notranslate nohighlight">\((\alpha,\beta,\gamma)\)</span>,
-all floats.</p>
+<dd class="field-even"><p>The three distinct entries of covariance matrix
+<span class="math notranslate nohighlight">\((\alpha,\beta,\gamma)\)</span>, all floats.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>float 1D array</p>
@@ -146,7 +151,7 @@ all floats.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="flintypy.v_stat._block_large_p">
 <span class="sig-prename descclassname"><span class="pre">flintypy.v_stat.</span></span><span class="sig-name descname"><span class="pre">_block_large_p</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blocks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flintypy.v_stat._block_large_p" title="Permalink to this definition">¶</a></dt>
-<dd><p>Approximate p-value for Exchangeability Test (Assuming Large P with Block Dependencies)</p>
+<dd><p>Approximate for Exchangeability Test (Large P, Block Dependency)</p>
 <p>Computes the large <span class="math notranslate nohighlight">\(P\)</span> asymptotic p-value for <span class="math notranslate nohighlight">\(\mathbf{X}\)</span>,
 assuming its <span class="math notranslate nohighlight">\(P\)</span> features are independent within specified blocks.</p>
 <p>Depends on: <cite>_chi2_weights</cite>, <cite>_block_cov</cite>, <cite>_calculate_bin_v_stat</cite>,
@@ -154,9 +159,10 @@ assuming its <span class="math notranslate nohighlight">\(P\)</span> features ar
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>X</strong> (<em>float numpy array</em>) – An <span class="math notranslate nohighlight">\(N \times P\)</span> array recording <span class="math notranslate nohighlight">\(P\)</span> features in <span class="math notranslate nohighlight">\(N\)</span> individuals</p></li>
-<li><p><strong>blocks</strong> (<em>List of int64 numpy arrays</em>) – List of arrays, with the <span class="math notranslate nohighlight">\(k\)</span> th array containing the indices of features
-in block <span class="math notranslate nohighlight">\(k\)</span>.</p></li>
+<li><p><strong>X</strong> (<em>float numpy array</em>) – An <span class="math notranslate nohighlight">\(N \times P\)</span> array recording <span class="math notranslate nohighlight">\(P\)</span> features in
+<span class="math notranslate nohighlight">\(N\)</span> individuals</p></li>
+<li><p><strong>blocks</strong> (<em>List of int64 numpy arrays</em>) – List of arrays, with the <span class="math notranslate nohighlight">\(k\)</span> th array containing the indices of
+features in block <span class="math notranslate nohighlight">\(k\)</span>.</p></li>
 <li><p><strong>p</strong> (<em>float</em>) – The Minkowski power, <span class="math notranslate nohighlight">\(l_p^p = (x_1^p+\ldots+x_n^p)\)</span></p></li>
 </ul>
 </dd>
@@ -172,17 +178,20 @@ in block <span class="math notranslate nohighlight">\(k\)</span>.</p></li>
 <dl class="py function">
 <dt class="sig sig-object py" id="flintypy.v_stat._block_large_p_large_n">
 <span class="sig-prename descclassname"><span class="pre">flintypy.v_stat.</span></span><span class="sig-name descname"><span class="pre">_block_large_p_large_n</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blocks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flintypy.v_stat._block_large_p_large_n" title="Permalink to this definition">¶</a></dt>
-<dd><p>Approximate p-value for Exchangeability Test (Large P, Large N, Block Dependency)</p>
-<p>Computes the large <span class="math notranslate nohighlight">\(P\)</span>, large <span class="math notranslate nohighlight">\(N\)</span> asymptotic p-value for <span class="math notranslate nohighlight">\(\mathbf{X}\)</span>,
-assuming its <span class="math notranslate nohighlight">\(P\)</span> features are are independent within specified blocks.</p>
+<dd><p>Approximate Exchangeability Test (Large P, Large N, Block Dependency)</p>
+<p>Computes the large <span class="math notranslate nohighlight">\(P\)</span>, large <span class="math notranslate nohighlight">\(N\)</span> asymptotic p-value
+for <span class="math notranslate nohighlight">\(\mathbf{X}\)</span>,
+assuming its <span class="math notranslate nohighlight">\(P\)</span> features are are
+independent within specified blocks.</p>
 <p>Depends on: <code class="docutils literal notranslate"><span class="pre">_chi2_weights</span></code>, <code class="docutils literal notranslate"><span class="pre">_block_cov</span></code>, <code class="docutils literal notranslate"><span class="pre">_calculate_bin_v_stat</span></code>,
 <code class="docutils literal notranslate"><span class="pre">_calculate_real_v_stat</span></code>, <code class="docutils literal notranslate"><span class="pre">scipy.stats.norm</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>X</strong> (<em>float numpy array</em>) – An <span class="math notranslate nohighlight">\(N \times P\)</span> array recording <span class="math notranslate nohighlight">\(P\)</span> features in <span class="math notranslate nohighlight">\(N\)</span> individuals</p></li>
-<li><p><strong>blocks</strong> (<em>List of int64 numpy arrays</em>) – List of arrays, with the <span class="math notranslate nohighlight">\(k\)</span> th array containing the indices of features
-in block <span class="math notranslate nohighlight">\(k\)</span>.</p></li>
+<li><p><strong>X</strong> (<em>float numpy array</em>) – An <span class="math notranslate nohighlight">\(N \times P\)</span> array recording <span class="math notranslate nohighlight">\(P\)</span> features
+in <span class="math notranslate nohighlight">\(N\)</span> individuals</p></li>
+<li><p><strong>blocks</strong> (<em>List of int64 numpy arrays</em>) – List of arrays, with the <span class="math notranslate nohighlight">\(k\)</span> th array containing the indices of
+features in block <span class="math notranslate nohighlight">\(k\)</span>.</p></li>
 <li><p><strong>p</strong> (<em>float</em>) – The Minkowski power, <span class="math notranslate nohighlight">\(l_p^p = (x_1^p+\ldots+x_n^p)\)</span></p></li>
 </ul>
 </dd>
@@ -206,9 +215,10 @@ whether to use distance caching or simple block permutations.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>X</strong> (<em>float numpy array</em>) – An <span class="math notranslate nohighlight">\(N \times P\)</span> array recording <span class="math notranslate nohighlight">\(P\)</span> features in <span class="math notranslate nohighlight">\(N\)</span> individuals</p></li>
-<li><p><strong>blocks</strong> (<em>List of int64 numpy arrays</em>) – List of arrays, with the <span class="math notranslate nohighlight">\(k\)</span> th array containing the indices of features
-in block <span class="math notranslate nohighlight">\(k\)</span>.</p></li>
+<li><p><strong>X</strong> (<em>float numpy array</em>) – An <span class="math notranslate nohighlight">\(N \times P\)</span> array recording <span class="math notranslate nohighlight">\(P\)</span> features
+in <span class="math notranslate nohighlight">\(N\)</span> individuals</p></li>
+<li><p><strong>blocks</strong> (<em>List of int64 numpy arrays</em>) – List of arrays, with the <span class="math notranslate nohighlight">\(k\)</span> th array containing the indices of
+features in block <span class="math notranslate nohighlight">\(k\)</span>.</p></li>
 <li><p><strong>nruns</strong> (<em>int</em>) – The number of permutations to perform / resampling number.</p></li>
 <li><p><strong>p</strong> (<em>float</em>) – The Minkowski power, <span class="math notranslate nohighlight">\(l_p^p = (x_1^p+\ldots+x_n^p)\)</span></p></li>
 </ul>
@@ -228,7 +238,8 @@ in block <span class="math notranslate nohighlight">\(k\)</span>.</p></li>
 <dd><p>Map from Indices to Label Pairs</p>
 <p>Builds a map from indexes to pairs of labels.
 This is for caching distances, to avoid recomputing
-distances especially when dealing with high-dimensional (large <span class="math notranslate nohighlight">\(P\)</span>) arrays.</p>
+distances especially when dealing with high-dimensional (large <span class="math notranslate nohighlight">\(P\)</span>)
+arrays.</p>
 <p>Depends on: <code class="docutils literal notranslate"><span class="pre">numba.njit</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -250,15 +261,18 @@ corresponding to the pair of labels (indexed by the matrix dimensions)</p>
 <dd><p>Map from Label Pairs to Indices</p>
 <p>Builds a map from pairs of labels to indexes.
 This is for caching distances, to avoid recomputing
-distances especially when dealing with high-dimensional (large <span class="math notranslate nohighlight">\(P\)</span>) arrays.</p>
+distances especially when dealing with high-dimensional (large <span class="math notranslate nohighlight">\(P\)</span>)
+arrays.</p>
 <p>Depends on: <code class="docutils literal notranslate"><span class="pre">numba.njit</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>n</strong> (<em>int</em>) – Sample size (i.e., <span class="math notranslate nohighlight">\(\mathbf{X}\)</span>.shape[0])</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>reverse</strong> – An <span class="math notranslate nohighlight">\({N \choose 2} \times 2\)</span> array, whose entries at row <span class="math notranslate nohighlight">\(k\)</span>, <span class="math notranslate nohighlight">\((k,0)\)</span> and <span class="math notranslate nohighlight">\((k,1)\)</span>,
-are the indices that make up the <span class="math notranslate nohighlight">\(k\)</span> th pair in the list <span class="math notranslate nohighlight">\(((1,1), (1,2), ..., (1,N), (2,3),\ldots)\)</span></p>
+<dd class="field-even"><p><strong>reverse</strong> – An <span class="math notranslate nohighlight">\({N \choose 2} \times 2\)</span> array, whose entries at
+row <span class="math notranslate nohighlight">\(k\)</span>, <span class="math notranslate nohighlight">\((k,0)\)</span> and <span class="math notranslate nohighlight">\((k,1)\)</span>,
+are the indices that make up the <span class="math notranslate nohighlight">\(k\)</span> th pair in
+the list <span class="math notranslate nohighlight">\(((1,1), (1,2), ..., (1,N), (2,3),\ldots)\)</span></p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>int64 2D array</p>
@@ -278,15 +292,17 @@ generate samples from the block permutation distribution.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>X</strong> (<em>float numpy array</em>) – An <span class="math notranslate nohighlight">\(N \times P\)</span> array recording <span class="math notranslate nohighlight">\(P\)</span> features in <span class="math notranslate nohighlight">\(N\)</span> individuals</p></li>
-<li><p><strong>blocks</strong> (<em>List of int64 numpy arrays</em>) – List of arrays, with the <span class="math notranslate nohighlight">\(k\)</span> th array containing the indices of features
-in block <span class="math notranslate nohighlight">\(k\)</span>.</p></li>
+<li><p><strong>X</strong> (<em>float numpy array</em>) – An <span class="math notranslate nohighlight">\(N \times P\)</span> array recording <span class="math notranslate nohighlight">\(P\)</span> features
+in <span class="math notranslate nohighlight">\(N\)</span> individuals</p></li>
+<li><p><strong>blocks</strong> (<em>List of int64 numpy arrays</em>) – List of arrays, with the <span class="math notranslate nohighlight">\(k\)</span> th array containing the indices of
+features in block <span class="math notranslate nohighlight">\(k\)</span>.</p></li>
 <li><p><strong>nruns</strong> (<em>int</em>) – The number of permutations to perform / resampling number.</p></li>
 <li><p><strong>p</strong> (<em>float</em>) – The Minkowski power, <span class="math notranslate nohighlight">\(l_p^p = (x_1^p+\ldots+x_n^p)\)</span></p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Array of floats storing the permutation distribution of the <span class="math notranslate nohighlight">\(V\)</span> statistic</p>
+<dd class="field-even"><p>Array of floats storing the permutation distribution of the <span class="math notranslate nohighlight">\(V\)</span>
+statistic</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>array</p>
@@ -302,10 +318,12 @@ in block <span class="math notranslate nohighlight">\(k\)</span>.</p></li>
 <p>Depends on: <code class="docutils literal notranslate"><span class="pre">_hamming_distances</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>X</strong> (<em>int64 numpy array</em>) – An <span class="math notranslate nohighlight">\(N \times P\)</span> array recording <span class="math notranslate nohighlight">\(P\)</span> features in <span class="math notranslate nohighlight">\(N\)</span> individuals</p>
+<dd class="field-odd"><p><strong>X</strong> (<em>int64 numpy array</em>) – An <span class="math notranslate nohighlight">\(N \times P\)</span> array recording <span class="math notranslate nohighlight">\(P\)</span> features in
+<span class="math notranslate nohighlight">\(N\)</span> individuals</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The <span class="math notranslate nohighlight">\(V\)</span> statistic, a scalar computing the variance of the pairwise Hamming distance between individuals.</p>
+<dd class="field-even"><p>The <span class="math notranslate nohighlight">\(V\)</span> statistic, a scalar computing the
+variance of the pairwise Hamming distance between individuals.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>float</p>
@@ -318,18 +336,21 @@ in block <span class="math notranslate nohighlight">\(k\)</span>.</p></li>
 <span class="sig-prename descclassname"><span class="pre">flintypy.v_stat.</span></span><span class="sig-name descname"><span class="pre">_calculate_real_v_stat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flintypy.v_stat._calculate_real_v_stat" title="Permalink to this definition">¶</a></dt>
 <dd><p>V Statistic for Real Arrays</p>
 <p>Computes <span class="math notranslate nohighlight">\(V(\mathbf{X})\)</span> for a real matrix <span class="math notranslate nohighlight">\(\mathbf{X}\)</span>,
-where <span class="math notranslate nohighlight">\(V(\mathbf{X})\)</span> is the scaled variance of <span class="math notranslate nohighlight">\(l_p^p\)</span> distances
+where <span class="math notranslate nohighlight">\(V(\mathbf{X})\)</span> is the scaled
+variance of <span class="math notranslate nohighlight">\(l_p^p\)</span> distances
 between the rows of <span class="math notranslate nohighlight">\(\mathbf{X}\)</span>.</p>
 <p>Depends on: <code class="docutils literal notranslate"><span class="pre">scipy.spatial.distance.pdist</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>X</strong> (<em>float numpy array</em>) – An <span class="math notranslate nohighlight">\(N \times P\)</span> array recording <span class="math notranslate nohighlight">\(P\)</span> features in <span class="math notranslate nohighlight">\(N\)</span> individuals</p></li>
+<li><p><strong>X</strong> (<em>float numpy array</em>) – An <span class="math notranslate nohighlight">\(N \times P\)</span> array recording <span class="math notranslate nohighlight">\(P\)</span> features in
+<span class="math notranslate nohighlight">\(N\)</span> individuals</p></li>
 <li><p><strong>p</strong> (<em>float</em>) – The Minkowski power, <span class="math notranslate nohighlight">\(l_p^p = (x_1^p+\ldots+x_n^p)\)</span></p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The <span class="math notranslate nohighlight">\(V\)</span> statistic, a scalar computing the variance of the pairwise <span class="math notranslate nohighlight">\(l_p^p\)</span> distance between individuals.</p>
+<dd class="field-even"><p>The <span class="math notranslate nohighlight">\(V\)</span> statistic, a scalar computing the variance of the
+pairwise <span class="math notranslate nohighlight">\(l_p^p\)</span> distance between individuals.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>float</p>
@@ -342,8 +363,8 @@ between the rows of <span class="math notranslate nohighlight">\(\mathbf{X}\)</s
 <span class="sig-prename descclassname"><span class="pre">flintypy.v_stat.</span></span><span class="sig-name descname"><span class="pre">_chi2_weights</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flintypy.v_stat._chi2_weights" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get Chi Square Weights</p>
 <p>Computes convolution weights for the asymptotic random variable
-from the covariance entries <span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(\beta\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span>
-obtained from <span class="math notranslate nohighlight">\(\mathbf{X}\)</span>.</p>
+from the covariance entries <span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(\beta\)</span>
+and <span class="math notranslate nohighlight">\(\gamma\)</span> obtained from <span class="math notranslate nohighlight">\(\mathbf{X}\)</span>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -354,8 +375,10 @@ obtained from <span class="math notranslate nohighlight">\(\mathbf{X}\)</span>.<
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Two floats, <span class="math notranslate nohighlight">\(w_1\)</span> and <span class="math notranslate nohighlight">\(w_2\)</span>, where <span class="math notranslate nohighlight">\(w_1\)</span> is the weight for the chi square distribution with <span class="math notranslate nohighlight">\(n-1\)</span> degrees of
-freedom and <span class="math notranslate nohighlight">\(w_2\)</span> is the weight for the chi square distribution with <span class="math notranslate nohighlight">\({n-1 \choose 2} - 1\)</span> degrees of freedom.</p>
+<dd class="field-even"><p>Two floats, <span class="math notranslate nohighlight">\(w_1\)</span> and <span class="math notranslate nohighlight">\(w_2\)</span>, where <span class="math notranslate nohighlight">\(w_1\)</span> is the
+weight for the chi square distribution with <span class="math notranslate nohighlight">\(n-1\)</span> degrees of
+freedom and <span class="math notranslate nohighlight">\(w_2\)</span> is the weight for the chi square distribution
+with <span class="math notranslate nohighlight">\({n-1 \choose 2} - 1\)</span> degrees of freedom.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>1D floats</p>
@@ -367,8 +390,8 @@ freedom and <span class="math notranslate nohighlight">\(w_2\)</span> is the wei
 <dt class="sig sig-object py" id="flintypy.v_stat._convolution_of_chi2">
 <span class="sig-prename descclassname"><span class="pre">flintypy.v_stat.</span></span><span class="sig-name descname"><span class="pre">_convolution_of_chi2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flintypy.v_stat._convolution_of_chi2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Tail Probability for Chi Square Convolution Random Variable</p>
-<p>Computes <span class="math notranslate nohighlight">\(P(X &gt; val)\)</span> where <span class="math notranslate nohighlight">\(X = w_1 Y + w_2 Z\)</span>, where <span class="math notranslate nohighlight">\(Y\)</span>
-is chi square distributed with <span class="math notranslate nohighlight">\(d_1\)</span> degrees of freedom,
+<p>Computes <span class="math notranslate nohighlight">\(P(X &gt; val)\)</span> where <span class="math notranslate nohighlight">\(X = w_1 Y + w_2 Z\)</span>, where
+<span class="math notranslate nohighlight">\(Y\)</span> is chi square distributed with <span class="math notranslate nohighlight">\(d_1\)</span> degrees of freedom,
 and <span class="math notranslate nohighlight">\(Z\)</span> is chi square distributed with <span class="math notranslate nohighlight">\(d_2\)</span> degrees of
 freedom. The probabiity is computed using numerical
 integration of the densities of the two chi square
@@ -385,7 +408,8 @@ distributions. (Method: trapezoidal rule)</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><span class="math notranslate nohighlight">\(1 - CDF = P(X &gt; val)\)</span>, the probability that the rv is at least val</p>
+<dd class="field-even"><p><span class="math notranslate nohighlight">\(1 - CDF = P(X &gt; val)\)</span>, the probability that the rv
+is at least val</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>float</p>
@@ -396,10 +420,11 @@ distributions. (Method: trapezoidal rule)</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="flintypy.v_stat._dist_data_large_p">
 <span class="sig-prename descclassname"><span class="pre">flintypy.v_stat.</span></span><span class="sig-name descname"><span class="pre">_dist_data_large_p</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dist_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flintypy.v_stat._dist_data_large_p" title="Permalink to this definition">¶</a></dt>
-<dd><p>Asymptotic p-value Computation for Test of Exchangeability Using Distance Data</p>
+<dd><p>Asymptotic Test of Exchangeability Using Distance Data</p>
 <p>Generates an asymptotic distribution of <span class="math notranslate nohighlight">\(V\)</span>, by
 storing the provided list of distance data as
-a <span class="math notranslate nohighlight">\(B\times {N \choose 2}\)</span> array, and then using large-<span class="math notranslate nohighlight">\(P\)</span> theory to
+a <span class="math notranslate nohighlight">\(B\times {N \choose 2}\)</span> array,
+and then using large-<span class="math notranslate nohighlight">\(P\)</span> theory to
 generate the asymptotic null distribution. The observed <span class="math notranslate nohighlight">\(V\)</span>
 statistic is also computed from the distance data.</p>
 <p>Each element of <cite>dist_list</cite> should be the same type.
@@ -464,10 +489,13 @@ gains are only for sufficiently large arrays.</p>
 <p>Depends on: <code class="docutils literal notranslate"><span class="pre">gmpy2.pack</span></code>, <code class="docutils literal notranslate"><span class="pre">gmpy2.hamdist</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>X</strong> (<em>int64 numpy array</em>) – An <span class="math notranslate nohighlight">\(N\times P\)</span> array recording <span class="math notranslate nohighlight">\(P\)</span> features in <span class="math notranslate nohighlight">\(N\)</span> individuals</p>
+<dd class="field-odd"><p><strong>X</strong> (<em>int64 numpy array</em>) – An <span class="math notranslate nohighlight">\(N\times P\)</span> array recording <span class="math notranslate nohighlight">\(P\)</span> features
+in <span class="math notranslate nohighlight">\(N\)</span> individuals</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A length <span class="math notranslate nohighlight">\({N \choose 2}\)</span> array containing the pairwise Hamming distances in order <span class="math notranslate nohighlight">\(((1, 1), (1, 2), ..., (1, N), (2, 3),\ldots)\)</span>.</p>
+<dd class="field-even"><p>A length <span class="math notranslate nohighlight">\({N \choose 2}\)</span> array containing the
+pairwise Hamming distances in order
+<span class="math notranslate nohighlight">\(((1, 1), (1, 2), ..., (1, N), (2, 3),\ldots)\)</span>.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>float64 numpy array</p>
@@ -485,10 +513,13 @@ to compute the pairwise Hamming distances.</p>
 <p>Depends on: <code class="docutils literal notranslate"><span class="pre">_hamming_distance_gmpy</span></code>, <code class="docutils literal notranslate"><span class="pre">scipy.spatial.distance.pdist</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>X</strong> (<em>int64 numpy array</em>) – An <span class="math notranslate nohighlight">\(N \times P\)</span> array recording <span class="math notranslate nohighlight">\(P\)</span> features in <span class="math notranslate nohighlight">\(N\)</span> individuals</p>
+<dd class="field-odd"><p><strong>X</strong> (<em>int64 numpy array</em>) – An <span class="math notranslate nohighlight">\(N \times P\)</span> array recording <span class="math notranslate nohighlight">\(P\)</span> features
+in <span class="math notranslate nohighlight">\(N\)</span> individuals</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A length <span class="math notranslate nohighlight">\({N \choose 2}\)</span> array containing the pairwise Hamming distances in order <span class="math notranslate nohighlight">\(((1, 1), (1, 2), ..., (1, N), (2, 3),\ldots)\)</span>.</p>
+<dd class="field-even"><p>A length <span class="math notranslate nohighlight">\({N \choose 2}\)</span> array containing the
+pairwise Hamming distances in order
+<span class="math notranslate nohighlight">\(((1, 1), (1, 2), ..., (1, N), (2, 3),\ldots)\)</span>.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>float64 numpy array</p>
@@ -501,18 +532,21 @@ to compute the pairwise Hamming distances.</p>
 <span class="sig-prename descclassname"><span class="pre">flintypy.v_stat.</span></span><span class="sig-name descname"><span class="pre">_ind_cov</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flintypy.v_stat._ind_cov" title="Permalink to this definition">¶</a></dt>
 <dd><p>Covariance Computation Between Pairs of Distances (Independent Case)</p>
 <p>Computes covariance matrix entries and associated <span class="math notranslate nohighlight">\(\alpha\)</span>,
-<span class="math notranslate nohighlight">\(\beta\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span> quantities defined in Aw, Spence and Song (2021),
-assuming the <span class="math notranslate nohighlight">\(P\)</span> features of dataset <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> are independent.</p>
+<span class="math notranslate nohighlight">\(\beta\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span> quantities defined
+in Aw, Spence and Song (2021),
+assuming the <span class="math notranslate nohighlight">\(P\)</span> features of dataset
+<span class="math notranslate nohighlight">\(\mathbf{X}\)</span> are independent.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>X</strong> (<em>float numpy array</em>) – An <span class="math notranslate nohighlight">\(N \times P\)</span> array recording <span class="math notranslate nohighlight">\(P\)</span> features in <span class="math notranslate nohighlight">\(N\)</span> individuals</p></li>
+<li><p><strong>X</strong> (<em>float numpy array</em>) – An <span class="math notranslate nohighlight">\(N \times P\)</span> array recording <span class="math notranslate nohighlight">\(P\)</span> features
+in <span class="math notranslate nohighlight">\(N\)</span> individuals</p></li>
 <li><p><strong>p</strong> (<em>float</em>) – The Minkowski power, <span class="math notranslate nohighlight">\(l_p^p = (x_1^p+\ldots+x_n^p)\)</span></p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The three distinct entries of covariance matrix <span class="math notranslate nohighlight">\((\alpha,\beta,\gamma)\)</span>,
-all floats.</p>
+<dd class="field-even"><p>The three distinct entries of covariance matrix
+<span class="math notranslate nohighlight">\((\alpha,\beta,\gamma)\)</span>, all floats.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>float 1D array</p>
@@ -523,14 +557,18 @@ all floats.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="flintypy.v_stat._ind_large_p">
 <span class="sig-prename descclassname"><span class="pre">flintypy.v_stat.</span></span><span class="sig-name descname"><span class="pre">_ind_large_p</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flintypy.v_stat._ind_large_p" title="Permalink to this definition">¶</a></dt>
-<dd><p>Approximate p-value for Test of Exchangeability (Assuming Large P)</p>
+<dd><p>Approximate Test of Exchangeability (Large P)</p>
 <p>Computes the large <span class="math notranslate nohighlight">\(P\)</span> asymptotic p-value for dataset
 <span class="math notranslate nohighlight">\(\mathbf{X}\)</span>, assuming its <span class="math notranslate nohighlight">\(P\)</span> features are independent.</p>
-<p>Depends on: <code class="docutils literal notranslate"><span class="pre">scipy.stats.chi2</span></code>, <code class="docutils literal notranslate"><span class="pre">_calculate_bin_v_stat</span></code>, <code class="docutils literal notranslate"><span class="pre">_convolution_of_chi2</span></code></p>
+<dl class="simple">
+<dt>Depends on: <code class="docutils literal notranslate"><span class="pre">scipy.stats.chi2</span></code>, <code class="docutils literal notranslate"><span class="pre">_calculate_bin_v_stat</span></code>,</dt><dd><p><code class="docutils literal notranslate"><span class="pre">_convolution_of_chi2</span></code></p>
+</dd>
+</dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>X</strong> (<em>float numpy array</em>) – An <span class="math notranslate nohighlight">\(N \times P\)</span> array recording <span class="math notranslate nohighlight">\(P\)</span> features in <span class="math notranslate nohighlight">\(N\)</span> individuals</p></li>
+<li><p><strong>X</strong> (<em>float numpy array</em>) – An <span class="math notranslate nohighlight">\(N \times P\)</span> array recording <span class="math notranslate nohighlight">\(P\)</span> features in
+<span class="math notranslate nohighlight">\(N\)</span> individuals</p></li>
 <li><p><strong>p</strong> (<em>float</em>) – The Minkowski power, <span class="math notranslate nohighlight">\(l_p^p = (x_1^p+\ldots+x_n^p)\)</span></p></li>
 </ul>
 </dd>
@@ -546,7 +584,7 @@ all floats.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="flintypy.v_stat._ind_large_p_large_n">
 <span class="sig-prename descclassname"><span class="pre">flintypy.v_stat.</span></span><span class="sig-name descname"><span class="pre">_ind_large_p_large_n</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flintypy.v_stat._ind_large_p_large_n" title="Permalink to this definition">¶</a></dt>
-<dd><p>Approximate p-value for Test of Exchangeability (Assuming Large N and P)</p>
+<dd><p>Approximate Test of Exchangeability (Large N, Large P)</p>
 <p>Computes the large <span class="math notranslate nohighlight">\(N\)</span>, large <span class="math notranslate nohighlight">\(P\)</span> asymptotic p-value
 for <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> assuming its <span class="math notranslate nohighlight">\(P\)</span> features are independent.</p>
 <p>Depends on: <code class="docutils literal notranslate"><span class="pre">_calculate_bin_v_stat</span></code>, <code class="docutils literal notranslate"><span class="pre">_calculate_real_v_stat</span></code>,
@@ -554,7 +592,8 @@ for <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> assuming it
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>X</strong> (<em>float numpy array</em>) – An <span class="math notranslate nohighlight">\(N \times P\)</span> array recording <span class="math notranslate nohighlight">\(P\)</span> features in <span class="math notranslate nohighlight">\(N\)</span> individuals</p></li>
+<li><p><strong>X</strong> (<em>float numpy array</em>) – An <span class="math notranslate nohighlight">\(N \times P\)</span> array recording <span class="math notranslate nohighlight">\(P\)</span> features in
+<span class="math notranslate nohighlight">\(N\)</span> individuals</p></li>
 <li><p><strong>p</strong> (<em>float</em>) – The Minkowski power, <span class="math notranslate nohighlight">\(l_p^p = (x_1^p+\ldots+x_n^p)\)</span></p></li>
 </ul>
 </dd>
@@ -573,18 +612,27 @@ for <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> assuming it
 <dd><p>Resampling V Statistic</p>
 <p>Generates a new array <span class="math notranslate nohighlight">\(\mathbf{X}'\)</span> under the permutation null,
 and then returns the <span class="math notranslate nohighlight">\(V\)</span> statistic computed for <span class="math notranslate nohighlight">\(\mathbf{X}'\)</span>.</p>
-<p>Depends on: <code class="docutils literal notranslate"><span class="pre">_calculate_bin_v_stat</span></code>, <code class="docutils literal notranslate"><span class="pre">_calculate_real_v_stat</span></code>, <code class="docutils literal notranslate"><span class="pre">_numba_permute</span></code></p>
+<dl class="simple">
+<dt>Depends on: <code class="docutils literal notranslate"><span class="pre">_calculate_bin_v_stat</span></code>, <code class="docutils literal notranslate"><span class="pre">_calculate_real_v_stat</span></code>,</dt><dd><p><code class="docutils literal notranslate"><span class="pre">_numba_permute</span></code></p>
+</dd>
+</dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>X</strong> (<em>numpy array</em>) – An <span class="math notranslate nohighlight">\(N \times P\)</span> array recording <span class="math notranslate nohighlight">\(P\)</span> features in <span class="math notranslate nohighlight">\(N\)</span> individuals</p></li>
-<li><p><strong>block_labels</strong> (<em>int64 numpy array</em>) – A length <span class="math notranslate nohighlight">\(P\)</span> array, with entry <span class="math notranslate nohighlight">\(i\)</span> containing the label of the block that contains feature <span class="math notranslate nohighlight">\(i\)</span>.
-Blocks are assumed to be labeled 0 to number of blocks - 1.</p></li>
+<li><p><strong>X</strong> (<em>numpy array</em>) – An <span class="math notranslate nohighlight">\(N \times P\)</span> array recording <span class="math notranslate nohighlight">\(P\)</span> features
+in <span class="math notranslate nohighlight">\(N\)</span> individuals</p></li>
+<li><p><strong>block_labels</strong> (<em>int64 numpy array</em>) – A length <span class="math notranslate nohighlight">\(P\)</span> array, with entry <span class="math notranslate nohighlight">\(i\)</span> containing the
+label of the block that contains feature <span class="math notranslate nohighlight">\(i\)</span>. Blocks are
+assumed to be labeled 0 to number of blocks - 1.</p></li>
 <li><p><strong>p</strong> (<em>float</em>) – The Minkowski power, <span class="math notranslate nohighlight">\(l_p^p = (x_1^p+\ldots+x_n^p)\)</span></p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><span class="math notranslate nohighlight">\(V(\mathbf{X}')\)</span>, where <span class="math notranslate nohighlight">\(\mathbf{X}'\)</span> is a resampled version of <span class="math notranslate nohighlight">\(\mathbf{X}\)</span>.</p>
+<dd class="field-even"><p><dl class="simple">
+<dt><span class="math notranslate nohighlight">\(V(\mathbf{X}')\)</span>, where <span class="math notranslate nohighlight">\(\mathbf{X}'\)</span> is a</dt><dd><p>resampled version of <span class="math notranslate nohighlight">\(\mathbf{X}\)</span>.</p>
+</dd>
+</dl>
+</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>float</p>
@@ -601,13 +649,16 @@ Blocks are assumed to be labeled 0 to number of blocks - 1.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>X</strong> (<em>numpy array</em>) – An <span class="math notranslate nohighlight">\(N \times P\)</span> array recording <span class="math notranslate nohighlight">\(P\)</span> features in <span class="math notranslate nohighlight">\(N\)</span> individuals</p></li>
-<li><p><strong>block_labels</strong> (<em>int64 numpy array</em>) – A length <span class="math notranslate nohighlight">\(P\)</span> array, with entry <span class="math notranslate nohighlight">\(i\)</span> containing the label of the block that contains feature <span class="math notranslate nohighlight">\(i\)</span>.
-Blocks are assumed to be labeled 0 to number of blocks - 1.</p></li>
+<li><p><strong>X</strong> (<em>numpy array</em>) – An <span class="math notranslate nohighlight">\(N \times P\)</span> array recording <span class="math notranslate nohighlight">\(P\)</span> features in
+<span class="math notranslate nohighlight">\(N\)</span> individuals</p></li>
+<li><p><strong>block_labels</strong> (<em>int64 numpy array</em>) – A length <span class="math notranslate nohighlight">\(P\)</span> array, with entry <span class="math notranslate nohighlight">\(i\)</span> containing the
+label of the block that contains feature <span class="math notranslate nohighlight">\(i\)</span>. Blocks are
+assumed to be labeled 0 to number of blocks - 1.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>An <span class="math notranslate nohighlight">\(N \times P\)</span> matrix <span class="math notranslate nohighlight">\(\mathbf{X}'\)</span>, which is a permuted version of <span class="math notranslate nohighlight">\(\mathbf{X}\)</span>.</p>
+<dd class="field-even"><p>An <span class="math notranslate nohighlight">\(N \times P\)</span> matrix <span class="math notranslate nohighlight">\(\mathbf{X}'\)</span>, which is a
+permuted version of <span class="math notranslate nohighlight">\(\mathbf{X}\)</span>.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>numpy array</p>
@@ -625,19 +676,20 @@ to compute? Answer: You cache the distances and permute the underlying
 sample labels!</p>
 <p>Permutes pairwise distances (Hamming, <span class="math notranslate nohighlight">\(l_p^p\)</span>, etc.) within blocks.
 Permutations respect the fact that we are actually permuting the
-underlying labels. Arguments <cite>forward</cite> and <cite>reverse</cite> should be precomputed using
-<code class="docutils literal notranslate"><span class="pre">_build_forward</span></code> and <code class="docutils literal notranslate"><span class="pre">_build_reverse</span></code>.</p>
+underlying labels. Arguments <cite>forward</cite> and <cite>reverse</cite> should be precomputed
+using <code class="docutils literal notranslate"><span class="pre">_build_forward</span></code> and <code class="docutils literal notranslate"><span class="pre">_build_reverse</span></code>.</p>
 <p>Depends on: <code class="docutils literal notranslate"><span class="pre">numba.njit</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dists</strong> (<em>float64 numpy array</em>) – A <span class="math notranslate nohighlight">\(B \times {N \choose 2}\)</span> array, where each column records the pairwise distances across all blocks,
+<li><p><strong>dists</strong> (<em>float64 numpy array</em>) – A <span class="math notranslate nohighlight">\(B \times {N \choose 2}\)</span> array, where each column
+records the pairwise distances across all blocks,
 ordered as <span class="math notranslate nohighlight">\(((1, 1), (1, 2), ..., (1, N), (2, 3),\ldots)\)</span></p></li>
 <li><p><strong>forward</strong> (<em>numpy 2D array</em>) – A <span class="math notranslate nohighlight">\(N \times N\)</span> mapping from labels <span class="math notranslate nohighlight">\(i, j\)</span> to their
 corresponding index in <cite>dists</cite>. Should be
 precomputed using <code class="docutils literal notranslate"><span class="pre">_build_forward</span></code></p></li>
-<li><p><strong>reverse</strong> (<em>numpy 2D array</em>) – A <span class="math notranslate nohighlight">\({N \choose 2}\times 2\)</span> mapping from an index in <cite>dists</cite> to the
-corresponding labels <cite>i</cite> and <cite>j</cite>. Should be
+<li><p><strong>reverse</strong> (<em>numpy 2D array</em>) – A <span class="math notranslate nohighlight">\({N \choose 2}\times 2\)</span> mapping from an index in <cite>dists</cite> to
+the corresponding labels <cite>i</cite> and <cite>j</cite>. Should be
 precomputed using <code class="docutils literal notranslate"><span class="pre">_build_reverse</span></code>.</p></li>
 </ul>
 </dd>
@@ -654,7 +706,7 @@ block-permuted pairwise distances</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="flintypy.v_stat.dist_data_p_value">
 <span class="sig-prename descclassname"><span class="pre">flintypy.v_stat.</span></span><span class="sig-name descname"><span class="pre">dist_data_p_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dist_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">large_p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_perms</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flintypy.v_stat.dist_data_p_value" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>A Non-parametric Test for Exchangeability and Homogeneity (Distance List Version)</strong></p>
+<dd><p><strong>A Non-parametric Test for Exchangeability (Distance List Version)</strong></p>
 <p>Computes the p-value of a multivariate dataset, which
 informs the user if the sample is exchangeable at a given
 significance level, while simultaneously accounting for
@@ -691,31 +743,39 @@ The default is 1000.</p></li>
 <span class="sig-prename descclassname"><span class="pre">flintypy.v_stat.</span></span><span class="sig-name descname"><span class="pre">get_p_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blocks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">large_p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">large_n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_perms</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flintypy.v_stat.get_p_value" title="Permalink to this definition">¶</a></dt>
 <dd><p><strong>A Non-parametric Test of Exchangeability and Homogeneity</strong></p>
 <p>Computes the p-value of a multivariate dataset <span class="math notranslate nohighlight">\(\mathbf{X}\)</span>, which
-informs the user if the sample is exchangeable at a given significance level,
-while simultaneously accounting for feature dependencies. See Aw, Spence and
-Song (2021) for details.</p>
+informs the user if the sample is
+exchangeable at a given significance level,
+while simultaneously accounting for feature dependencies.
+See Aw, Spence, and Song (2021) for details.</p>
 <p>Automatically detects if dataset is binary, and runs the Hamming distance
 version of test if so. Otherwise, computes the squared Euclidean distance
-between individuals and evaluates whether the variance of Euclidean distances,
-<span class="math notranslate nohighlight">\(V\)</span>, is atypically large under the null hypothesis of exchangeability.</p>
-<p>Note the user may tweak the choice of power <span class="math notranslate nohighlight">\(p\)</span> if they prefer an <span class="math notranslate nohighlight">\(l_p^p\)</span>
+between individuals and evaluates whether
+the variance of Euclidean distances,
+<span class="math notranslate nohighlight">\(V\)</span>, is atypically large under
+the null hypothesis of exchangeability.</p>
+<p>Note the user may tweak the choice of
+power <span class="math notranslate nohighlight">\(p\)</span> if they prefer an <span class="math notranslate nohighlight">\(l_p^p\)</span>
 distance other than Euclidean (<span class="math notranslate nohighlight">\(p=2\)</span>).</p>
 <p>Under the hood, the variance statistic <span class="math notranslate nohighlight">\(V\)</span> is computed efficiently.
-Moreover, the user can specify their choice of block permutations, large <span class="math notranslate nohighlight">\(P\)</span>
-asymptotics, or large <span class="math notranslate nohighlight">\(P\)</span> and large <span class="math notranslate nohighlight">\(N\)</span> asymptotics. The latter two
+Moreover, the user can specify their
+choice of block permutations, large <span class="math notranslate nohighlight">\(P\)</span>
+asymptotics, or large <span class="math notranslate nohighlight">\(P\)</span> and
+large <span class="math notranslate nohighlight">\(N\)</span> asymptotics. The latter two
 return reasonbly accurate p-values for moderately large dimensionalities.</p>
 <p>User recommendations: When the number of independent blocks <span class="math notranslate nohighlight">\(B\)</span> or
 number of independent features <span class="math notranslate nohighlight">\(P\)</span> is at least <span class="math notranslate nohighlight">\(50\)</span>, it is safe
-to use large <span class="math notranslate nohighlight">\(P\)</span> asymptotics. If <span class="math notranslate nohighlight">\(P\)</span> or <span class="math notranslate nohighlight">\(B\)</span> is small, stick
+to use large <span class="math notranslate nohighlight">\(P\)</span> asymptotics.
+If <span class="math notranslate nohighlight">\(P\)</span> or <span class="math notranslate nohighlight">\(B\)</span> is small, stick
 with permutations.</p>
 <p>Depends on: <code class="docutils literal notranslate"><span class="pre">_ind_large_p</span></code>, <code class="docutils literal notranslate"><span class="pre">_ind_large_p_large_n</span></code>,
 <code class="docutils literal notranslate"><span class="pre">_block_large_p</span></code>, <code class="docutils literal notranslate"><span class="pre">_block_large_p_large_n</span></code>, <code class="docutils literal notranslate"><span class="pre">_block_permute</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>X</strong> (<em>float numpy array</em>) – An <span class="math notranslate nohighlight">\(N \times P\)</span> array recording <span class="math notranslate nohighlight">\(P\)</span> features in <span class="math notranslate nohighlight">\(N\)</span> individuals</p></li>
-<li><p><strong>blocks</strong> (<em>List of int64 numpy arrays</em><em>, </em><em>optional</em>) – List of arrays, with the <span class="math notranslate nohighlight">\(k\)</span> th array containing the indices of features
-in block <span class="math notranslate nohighlight">\(k\)</span>. The default is None.</p></li>
+<li><p><strong>X</strong> (<em>float numpy array</em>) – An <span class="math notranslate nohighlight">\(N \times P\)</span> array recording <span class="math notranslate nohighlight">\(P\)</span> features
+in <span class="math notranslate nohighlight">\(N\)</span> individuals</p></li>
+<li><p><strong>blocks</strong> (<em>List of int64 numpy arrays</em><em>, </em><em>optional</em>) – List of arrays, with the <span class="math notranslate nohighlight">\(k\)</span> th array containing the indices of
+features in block <span class="math notranslate nohighlight">\(k\)</span>. The default is None.</p></li>
 <li><p><strong>large_p</strong> (<em>boolean</em><em>, </em><em>optional</em>) – Indicates whether large <span class="math notranslate nohighlight">\(P\)</span> asymptotics
 are used to determine the approximate
 null distribution. The default is False.</p></li>
@@ -726,18 +786,20 @@ null distribution. The default is False.</p></li>
 permutations to perform if not using an
 asymptotic test.  If either <cite>large_p</cite> or <cite>large_n</cite>
 is true, <cite>num_perms</cite> is ignored. The default is 1000.</p></li>
-<li><p><strong>p</strong> (<em>float</em><em>, </em><em>optional</em>) – The Minkowski power, <span class="math notranslate nohighlight">\(l_p^p = (x_1^p+\ldots+x_n^p)\)</span>. The default is 2.</p></li>
+<li><p><strong>p</strong> (<em>float</em><em>, </em><em>optional</em>) – The Minkowski power, <span class="math notranslate nohighlight">\(l_p^p = (x_1^p+\ldots+x_n^p)\)</span>.
+The default is 2.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>IOError</strong> – These are errors associated with assertions and unit tests.</p></li>
-<li><p><strong>NotImplementedError</strong> – This error corresponds to the large <span class="math notranslate nohighlight">\(N\)</span>, small <span class="math notranslate nohighlight">\(P\)</span> asymptotics,
-    which is currently not implemented.</p></li>
+<li><p><strong>NotImplementedError</strong> – This error corresponds to the large <span class="math notranslate nohighlight">\(N\)</span>, small <span class="math notranslate nohighlight">\(P\)</span>
+    asymptotics, which is currently not implemented.</p></li>
 </ul>
 </dd>
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>The p-value computed for the <span class="math notranslate nohighlight">\(V\)</span> statistic of <span class="math notranslate nohighlight">\(\mathbf{X}\)</span>.</p>
+<dd class="field-odd"><p>The p-value computed for the <span class="math notranslate nohighlight">\(V\)</span>
+statistic of <span class="math notranslate nohighlight">\(\mathbf{X}\)</span>.</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>float</p>

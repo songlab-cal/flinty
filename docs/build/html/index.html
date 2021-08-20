@@ -71,6 +71,7 @@
 <li><a class="reference internal" href="#how-to-install">How to install?</a><ul>
 <li><a class="reference internal" href="#using-both-conda-and-pip-recommended">Using both <code class="docutils literal notranslate"><span class="pre">conda</span></code> and <code class="docutils literal notranslate"><span class="pre">pip</span></code> (Recommended)</a></li>
 <li><a class="reference internal" href="#using-only-pip-native-python-users-with-homebrew">Using only <code class="docutils literal notranslate"><span class="pre">pip</span></code> (Native Python Users with Homebrew)</a></li>
+<li><a class="reference internal" href="#using-the-tarball-not-recommended">Using the Tarball (Not Recommended)</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#api-reference">API reference</a></li>
@@ -152,9 +153,9 @@
 </pre></div>
 </div>
 <ol class="arabic simple" start="4">
-<li><p>Install <strong>flintyPy</strong> (v0.1.19, on Test PyPI) using pip.</p></li>
+<li><p>Install <strong>flintyPy</strong> using pip.</p></li>
 </ol>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip install --extra-index-url https://pypi.org/simple -i https://test.pypi.org/simple/ flintypy==0.1.19</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip install flintypy</span>
 </pre></div>
 </div>
 <p>Run Steps 1,2 and 4. If Step 4 fails, go back to Step 3 and proceed with Step 4.</p>
@@ -181,12 +182,20 @@
 </pre></div>
 </div>
 <ol class="arabic simple" start="4">
-<li><p>Install <strong>flintyPy</strong> (v0.1.19, on Test PyPI) using pip.</p></li>
+<li><p>Install <strong>flintyPy</strong> using pip.</p></li>
 </ol>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip install --extra-index-url https://pypi.org/simple -i https://test.pypi.org/simple/ flintypy==0.1.19</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip install flintypy</span>
 </pre></div>
 </div>
 <p>Note that if Step 4 fails, a practical workaround solution is to <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> <strong>numpy</strong> (==1.21.1), <strong>numba</strong> (==0.53.1), <strong>scipy</strong> (==1.7.1) and <strong>gmpy2</strong> (=2.0.8) right after Step 3.</p>
+</div>
+<div class="section" id="using-the-tarball-not-recommended">
+<h3>Using the Tarball (Not Recommended)<a class="headerlink" href="#using-the-tarball-not-recommended" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Download the <a class="reference external" href="https://pypi.org/project/flintypy/">package</a> tar ball.</p></li>
+<li><p>Use tar to unzip the tar ball.</p></li>
+<li><p>Enter the directory containing <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> and run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">install</span></code>.</p></li>
+</ol>
 <p>For guidance on running our exchangeability test, please click on the “Examples” tab.</p>
 </div>
 </div>

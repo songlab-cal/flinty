@@ -43,17 +43,16 @@ Using both ``conda`` and ``pip`` (Recommended)
     conda install scipy==1.7.1
     conda install gmpy2=2.0.8
 
-4. Install **flintyPy** (v0.1.19, on Test PyPI) using pip.
+4. Install **flintyPy** using pip.
 
 .. code-block:: console
 
-    pip install --extra-index-url https://pypi.org/simple -i https://test.pypi.org/simple/ flintypy==0.1.19
+    pip install flintypy
 
 Run Steps 1,2 and 4. If Step 4 fails, go back to Step 3 and proceed with Step 4. 
 
 Using only ``pip`` (Native Python Users with Homebrew)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 1. Install `virtualenv <https://virtualenv.pypa.io/en/latest/>`_ if you don't already use it.
 
@@ -74,13 +73,21 @@ Using only ``pip`` (Native Python Users with Homebrew)
     
     source flinty/bin/activate
 
-4. Install **flintyPy** (v0.1.19, on Test PyPI) using pip.
+4. Install **flintyPy** using pip.
 
 .. code-block:: console
 
-    pip install --extra-index-url https://pypi.org/simple -i https://test.pypi.org/simple/ flintypy==0.1.19
+    pip install flintypy
 
 Note that if Step 4 fails, a practical workaround solution is to ``pip install`` **numpy** (==1.21.1), **numba** (==0.53.1), **scipy** (==1.7.1) and **gmpy2** (=2.0.8) right after Step 3. 
+
+Using the Tarball (Not Recommended)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Download the `package <https://pypi.org/project/flintypy/>`_ tar ball.
+2. Use tar to unzip the tar ball.
+3. Enter the directory containing ``setup.py`` and run ``python setup.py install``.
+
 
 For guidance on running our exchangeability test, please click on the "Examples" tab.
 
