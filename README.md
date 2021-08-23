@@ -2,7 +2,9 @@
 
 ![Exchangeability intuition](standalone_2.jpg)
 <p align="center">
-*If a sample contains multiple subclusters, thus non-exchangeable, then pairwise distances between observations have higher spread.*
+<i>
+If a sample contains multiple subclusters, thus non-exchangeable, then pairwise distances between observations have higher spread.
+</i>
 </p>
 
 Welcome to the homepage of `flinty`, a method for detecting non-exchangeability, or heterogeneity, in multivariate datasets. Details of our method can be found in
