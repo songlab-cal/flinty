@@ -3,7 +3,7 @@
 ![Exchangeability intuition](standalone_2.jpg)
 <p align="center">
 <i>
-If a sample contains multiple subclusters, thus non-exchangeable, then pairwise distances between observations have higher spread.
+Given a cluster, dataset, or sample comprising multiple observations, the existence of subclusters, subgroups or stratification is accompanied by a wider spread of pairwise distances between the observations.
 </i>
 </p>
 
