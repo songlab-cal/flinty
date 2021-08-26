@@ -18,6 +18,10 @@ What does this package offer?
 - It is *scalable*, so the user does not have to worry about the sample size :math:`N` or the number of features :math:`P` of the data.
 - It is *robust*, meaning that it controls for false positive rate (FPR) and remains powerful in realistic settings including uneven representation of subpopulations, sparsity of discriminative features, and small sample sizes.
 
+Here is a schema of how **flintyPy** works.
+
+.. image:: standalone_5.jpg
+
 How to install?
 ---------------
 
