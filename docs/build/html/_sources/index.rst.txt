@@ -20,7 +20,7 @@ What does this package offer?
 
 Here is a schema of how **flintyPy** works.
 
-.. image:: standalone_5.jpg
+.. image:: standalone_6.jpg
 
 How to install?
 ---------------
