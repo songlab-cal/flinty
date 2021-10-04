@@ -8,7 +8,7 @@ Given a cluster, dataset, or sample comprising multiple observations, the existe
 </p>
 
 Welcome to the homepage of `flinty`, a method for detecting non-exchangeability, or heterogeneity, in multivariate datasets. Details of our method can be found in
-> Aw, Spence and Song (2021+) "A Flexible and Robust Non-parametric Test of Exchangeability," *submitted*.
+> Aw, Spence and Song (2021+) "A Flexible and Robust Non-parametric Test of Exchangeability," *submitted*. Preprint available at [arXiv:2109.15261](https://arxiv.org/abs/2109.15261).
 
 ## Python Users
 
@@ -17,6 +17,10 @@ Please visit the package homepage for **flintyPy** [here](https://songlab-cal.gi
 ## R Users
 
 Please visit the package homepage for **flintyR** [here](https://alanaw1.github.io/flintyR). Our homepage provides installation instructions, as well as numerous tutorials that expand on analyses reported in our paper. 
+
+## Software
+
+While our documentation above should help you install our packages, our software is also available in the **software** subdirectory.
 
 ## Tutorials
 
