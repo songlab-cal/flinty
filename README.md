@@ -1,4 +1,4 @@
-# A Flexible and Robust Non-parametric Test of Exchangeability
+# A Simple and Flexible Test of Sample Exchangeability with Applications to Statistical Genomics
 
 ![Exchangeability intuition](standalone_2.jpg)
 <p align="center">
@@ -7,8 +7,8 @@ Given a cluster, dataset, or sample comprising multiple observations, the existe
 </i>
 </p>
 
-Welcome to the homepage of `flinty`, a method for detecting non-exchangeability, or heterogeneity, in multivariate datasets. Details of our method can be found in
-> Aw, Spence and Song (2021+) "A Flexible and Robust Non-parametric Test of Exchangeability," *submitted*. Preprint available at [arXiv:2109.15261](https://arxiv.org/abs/2109.15261).
+Welcome to the homepage of `flinty`, a method for assessing sample non-exchangeability, or heterogeneity, in multivariate datasets. Details of our method can be found in
+> Aw, Spence and Song (2021+) "A simple and flexible test of sample exchangeability with applications to statistical genomics," *Annals of Applied Statistics* (to appear). Preprint available at [arXiv:2109.15261](https://arxiv.org/abs/2109.15261).
 
 ## Python Users
 
