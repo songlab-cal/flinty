@@ -35,3 +35,7 @@ With the kind help of domain experts from biology and the social sciences, we al
 - [Exchangeability and the World Values Survey](https://alanaw1.github.io/flintyR/articles/wvs.html)
 
 Please feel free to use these tutorials for research or teaching purposes. We welcome any feedback or suggestions that will help make our work more accessible.
+
+## Manuscript
+
+The Supplementary Information file to our main text contains technical proofs that may be of interest to the reader. We have made it available in the **manuscript** subdirectory. 
