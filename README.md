@@ -8,7 +8,7 @@ Given a cluster, dataset, or sample comprising multiple observations, the existe
 </p>
 
 Welcome to the homepage of `flinty`, a method for assessing sample non-exchangeability, or heterogeneity, in multivariate datasets. Details of our method can be found in
-> Aw, Spence and Song (2023) "A simple and flexible test of sample exchangeability with applications to statistical genomics," *Annals of Applied Statistics* **18** (1):858-881. DOI: [10.1214/23-AOAS1817](https://doi.org/10.1214/23-AOAS1817). Preprint available at [arXiv:2109.15261](https://arxiv.org/abs/2109.15261).
+> Aw, Spence and Song (2024) "A simple and flexible test of sample exchangeability with applications to statistical genomics," *Annals of Applied Statistics* **18** (1): 858-881. DOI: [10.1214/23-AOAS1817](https://doi.org/10.1214/23-AOAS1817). Preprint available at [arXiv:2109.15261](https://arxiv.org/abs/2109.15261).
 
 ## Python Users
 
